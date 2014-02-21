@@ -32,6 +32,7 @@ var letterScore = function(letter) {
   } else if (score10Letters.indexOf(letter) >=0) {
     return 10;
   }
+};
 
   //Before Refactoring with .idexOf
   // for (var i = 0; i < score1Letters.length; i++) {
@@ -52,20 +53,17 @@ var letterScore = function(letter) {
   //   }
   // };    
 
-};
 
 $(document).ready(function() {
-
   $('form#scrabble').submit(function(event) {
 
-    
     var textInput = $('input#inputString').val();
     var result = wordScore(textInput);
 
-  $('#result').text(result);
+    $('#result').text(result);
+    this.reset();
 
-  event.preventDefault();
+    event.preventDefault();
 
   });
-  
 });
