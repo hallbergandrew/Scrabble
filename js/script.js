@@ -52,5 +52,20 @@ var letterScore = function(letter) {
   //   }
   // };    
 
-
 };
+
+$(document).ready(function() {
+
+  $('form#scrabble').submit(function(event) {
+
+    
+    var textInput = $('input#inputString').val();
+    var result = wordScore(textInput);
+
+  $('#result').text(result);
+
+  event.preventDefault();
+
+  });
+  
+});
